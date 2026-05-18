@@ -37,7 +37,8 @@
     "productName": "Download Limit Controller",
     "copyright": "Copyright (c) 2026 Download Limit Controller",
     "directories": {
-      "output": "release"
+      "output": "release",
+      "buildResources": "build-resources"
     },
     "files": [
       "dist/**/*",
@@ -62,6 +63,9 @@
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
+      "installerHeader": "build-resources/installerHeader.bmp",
+      "installerSidebar": "build-resources/installerSidebar.bmp",
+      "uninstallerSidebar": "build-resources/installerSidebar.bmp",
       "shortcutName": "Download Limit Controller",
       "uninstallDisplayName": "Download Limit Controller"
     }
