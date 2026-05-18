@@ -4,8 +4,13 @@ import { AlertTriangle, Gauge, Network, Power, RefreshCw, ShieldCheck, ZapOff } 
 import "./styles.css";
 
 const isTauri = Boolean(window.__TAURI_INTERNALS__);
+const isElectron = Boolean(window.netlimiter);
 
 async function invokeCommand(command, payload) {
+  if (isElectron) {
+    return window.netlimiter.invoke(command, payload);
+  }
+
   if (isTauri) {
     const { invoke } = await import("@tauri-apps/api/core");
     return invoke(command, payload);
